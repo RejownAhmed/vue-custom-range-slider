@@ -1,4 +1,4 @@
-# Vue Custom Range Slider Component for volume/audio-video progress control.
+# Vue Custom Range Slider Component for Volume or Audio/Video progress control.
 This is browser built in range slider alternative created with **Vue Js**. Stop using input type="range" for volume or audio/video progress control in a audio/video platform. 
 There are many custom indicator with html/css but one of the biggest fallback is that they are not reusable. 
 You have to add, edit the whole source file to do simple changes. So, I made a **Custom Progress Control** Component in Vue 3 with 
