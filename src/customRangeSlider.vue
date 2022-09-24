@@ -128,6 +128,7 @@
   
   </script>
   <style lang="scss" scoped> 
+    //Don't get demotivated seeing SCSS styling here. Check out the style.css file for the compiled normal css
     .range-container {
         --range-container-height: 7px;
         --range-height: 3px;
