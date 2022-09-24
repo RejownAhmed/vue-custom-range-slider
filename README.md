@@ -16,4 +16,4 @@ You can use **v-model** directive on the component
 to get the slider position value and use it to set the volume or video/audio progress as per your need. You'll get more clear idea if you visit the example above.
 
 
-Thank you for downloading and using this. Hope it helps. Let me know if really helped you😊💖
+Thank you for using this. Hope it helps. Let me know if it helped you😊💖
