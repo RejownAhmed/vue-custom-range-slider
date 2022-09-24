@@ -8,7 +8,7 @@
             '--range-container-height': props.rangecontainerheight, 
             '--range-height': props.rangeHeight, 
             '--thumb-height': props.thumbHeight, 
-            '--range-color': props.rangeColor, 
+            '--range-bg-color': props.rangeBgColor, 
             '--thumb-color': props.thumbColor, 
             '--preview-color': props.previewColor, 
             '--progress-color': props.progressColor, 
@@ -66,7 +66,7 @@
                 type: String,
                 default: '200%'
             },
-            rangeColor: {
+            rangeBgColor: {
                 type: String,
                 default: 'rgba(100, 100, 100, .5)'
             },
@@ -129,7 +129,7 @@
         --range-height: 3px;
         --hover-range-height: var(--range-height);
         --thumb-height: 200%;
-        --range-color: rgba(100, 100, 100, .5);
+        --range-bg-color: rgba(100, 100, 100, .5);
         --thumb-color: red;
         --preview-color: rgb(150, 150, 150);
         --progress-color: red;
@@ -142,7 +142,7 @@
         display: flex;
         align-items: center;
         .range {
-            background-color: var(--range-color);
+            background-color: var(--range-bg-color);
             height: var(--range-height);
             width: 100%;
             position: relative;
