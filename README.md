@@ -9,12 +9,12 @@ without even editing the component itself.
 
 ## How to use it?
 
-Okay, so you have downloaded the component from the src folder. Now it's time to use it properly.
+It's so easy😁 Just download or copy the component from the ***src*** folder and put it in your project. Then simply import the component and use it as like any other vue js components. 
 
-It's so easy😁 Just import the component and use it as like any other vue js components. 
+## Getting the progress value and setting it as needed
 
 You can use **v-model** directive on the component
-to get the percent value and use it to set the volume or video/audio progress as per your need. 
+to get the slider position value and use it to set the volume or video/audio progress as per your need. You'll get more clear idea if you visit the example above.
 
 
 Thank you for downloading and using this. Hope it helps. Let me know if really helped you😊💖
