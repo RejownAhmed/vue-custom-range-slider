@@ -1,5 +1,6 @@
 <template>
     <div 
+        :id="props.id"
         class="range-container"
         :class="props.expandOnHover ? 'expandOnHover' : ''"
         :style="{   
@@ -28,6 +29,10 @@
             modelValue: {
                 type: String,
                 default: '0'
+            },
+            id: {
+                type: String,
+                required: true,
             },
             defaultPosition: {
                 type: Number,
@@ -87,7 +92,7 @@
     const rangeContainer = ref()
   
     onMounted(()=>{
-        rangeContainer.value = document.querySelector(".range-container")
+        rangeContainer.value = document.getElementById(props.id)
         customRange()
     })
   
@@ -118,7 +123,7 @@
     }
   
   </script>
-  <style lang="scss"> 
+  <style lang="scss" scoped> 
     .range-container {
         --range-container-height: 7px;
         --range-height: 3px;
