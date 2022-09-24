@@ -3,6 +3,7 @@
       class="range-container"
       :class="props.expandOnHover ? 'expandOnHover' : ''"
       :style="{   
+          '--progress-position': props.defaultPosition, 
           '--range-container-height': props.rangecontainerheight, 
           '--range-height': props.rangeHeight, 
           '--thumb-height': props.thumbHeight, 
@@ -25,6 +26,10 @@
   const props = defineProps(
       {
           modelValue: {
+              type: String,
+              default: '0'
+          },
+          defaultPosition: {
               type: String,
               default: '0'
           },
