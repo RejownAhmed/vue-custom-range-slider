@@ -5,7 +5,7 @@
         :class="props.expandOnHover ? 'expandOnHover' : ''"
         :style="{   
             '--progress-position': position, 
-            '--range-container-height': props.rangecontainerheight, 
+            '--range-container-height': props.rangeContainerHeight, 
             '--range-height': props.rangeHeight, 
             '--thumb-height': props.thumbHeight, 
             '--range-bg-color': props.rangeBgColor, 
@@ -14,8 +14,8 @@
             '--progress-color': props.progressColor, 
         }">
         <div class="range">
-            <span v-if="!props.noPreview" class="preview"></span>
-            <span class="progress"></span>
+            <span v-if="!props.noPreviewBar" class="preview"></span>
+            <span v-if="!props.noProgressBar" class="progress"></span>
             <slot></slot>
             <span v-if="!props.noThumb" class="thumb-indicator" :style="props.alwaysShowThumb ? {display: 'block'} : ''"></span>
         </div>
@@ -42,7 +42,11 @@
                 type: Boolean,
                 default: false
             },
-            noPreview: {
+            noPreviewBar: {
+                type: Boolean,
+                default: false
+            },
+            noProgressBar: {
                 type: Boolean,
                 default: false
             },
@@ -54,7 +58,7 @@
                 type: Boolean,
                 default: false
             },
-            rangecontainerheight: {
+            rangeContainerHeight: {
                 type: String,
                 default: '7px'
             },
@@ -146,21 +150,6 @@
             height: var(--range-height);
             width: 100%;
             position: relative;
-            .thumb-indicator{
-                display: none;
-                position: absolute;
-                transform: translate(-50%, -50%) scale(1);
-                height: var(--thumb-height);
-                top: 50%;
-                left: calc(var(--progress-position) * 100%);
-                background-color: var(--thumb-color);
-                border-radius: 50%;
-                transition: transform 150ms ease-in-out;
-                aspect-ratio: 1 / 1;
-                z-index: 1080;
-            }
-        }
-        .range{
             .preview {
                 content: "";
                 position: absolute;
@@ -182,7 +171,19 @@
                 right: calc(100% - var(--progress-position) * 100%);
                 background-color: var(--progress-color);
             }
-  
+            .thumb-indicator{
+                display: none;
+                position: absolute;
+                transform: translate(-50%, -50%) scale(1);
+                height: var(--thumb-height);
+                top: 50%;
+                left: calc(var(--progress-position) * 100%);
+                background-color: var(--thumb-color);
+                border-radius: 50%;
+                transition: transform 150ms ease-in-out;
+                aspect-ratio: 1 / 1;
+                z-index: 1080;
+            }
         }
         &:hover{
             .range {
