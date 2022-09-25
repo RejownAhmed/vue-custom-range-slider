@@ -1,17 +1,16 @@
 {
   "name": "custom-range-controller",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "files": [
     "dist"
   ],
-  "main": "./dist/custom-range-controller.umd.js",
-  "module": "./dist/custom-range-controller.es.js",
+  "main": "./dist/custom-range-controller.umd.cjs",
+  "module": "./dist/custom-range-controller.js",
   "exports": {
     ".": {
-      "import": "./dist/custom-range-controller.es.js",
-      "require": "./dist/custom-range-controller.umd.js"
-    },
-    "./dist/style.css": "./dist/style.css"
+      "import": "./dist/custom-range-controller.js",
+      "require": "./dist/custom-range-controller.umd.cjs"
+    }
   },
   "type": "module",
   "scripts": {
