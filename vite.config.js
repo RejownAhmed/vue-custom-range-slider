@@ -7,7 +7,7 @@ export default defineConfig({
     lib: {
       entry: path.resolve(__dirname, "src/index.js"),
       name: "customRangeController",
-      fileName: `custom-range-controller`,
+      fileName: (format) => `custom-range-controller.${format}.js`,
     }
   },
   rollupOptions: {

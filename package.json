@@ -1,18 +1,15 @@
 {
-  "name": "custom-range-controller",
-  "version": "1.0.2",
-  "files": [
-    "dist"
-  ],
-  "main": "./dist/custom-range-controller.umd.cjs",
-  "module": "./dist/custom-range-controller.js",
+  "name": "custom-range-slider-controller",
+  "files": ["dist"],
+  "main": "./dist/custom-range-slider-controller.umd.js",
+  "module": "./dist/custom-range-slider-controller.es.js",
   "exports": {
     ".": {
-      "import": "./dist/custom-range-controller.js",
-      "require": "./dist/custom-range-controller.umd.cjs"
+      "import": "./dist/custom-range-slider-controller.es.js",
+      "require": "./dist/custom-range-slider-controller.umd.js"
     }
   },
-  "type": "module",
+  "version": "1.0.1",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
