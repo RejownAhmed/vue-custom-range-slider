@@ -1,7 +1,7 @@
-import customRangeController from "./components/customRangeController.vue"
+import customRangeController from "./components/customRangeController.ce.vue"
 
 export default {
-    install: (app, options) => {
-        app.component("customRangeController", customRangeController)
-    },
+    components: {
+        customRangeController
+    }
 }
