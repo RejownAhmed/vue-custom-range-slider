@@ -16,8 +16,6 @@ You can use **v-model** directive on the component
 to get the slider position value and use it to set the volume or video/audio progress as per your need. You'll get more clear idea if you visit the example above.
 
 ## Available Props:
-```id``` - It is required. Must be unique for each instance loaded. <br><br>
-```defaultPosition``` - previous/default progress already. ```default: 0``` <br> **NOTE:** it's type is number. So, pass float/integer but no string. And it must be between 0 to 1<br><br>
 ```rangeContainerHeight``` - Set the height of the range slider container. ``default: 7px``.
 <br>**NOTE:** Set the height bigger than the range slider height. since it's the background of the slider and will be used for hover effect/animation<br><br>
 ```rangeHeight``` - Set the height of the range slider itself. ``default: 3px``.<br><br>
@@ -33,4 +31,10 @@ to get the slider position value and use it to set the volume or video/audio pro
 ```noProgressBar``` - hide the Progress/Main Indicator bar. ``default: false``.<br>
 ```noThumb``` - hide the thumb indicator always. ``default: false``.<br><br>
 
+## Providing a default position:
+This is simple. add a v-model directive and pass the default value in the reactive variable itself. <br><br>
+**Example:** <br>
+> **Defining the varibale:** ```const value = ref(0.4)```<br>
+**Usage in the component:** ```<custom-range-slider v-model="value"></custom-range-slider>``` <br><br>
+<b> This an extremly needed feature. Sometimes we want to set a default progress position from the server or browser localstorage. Imagine you want to add a continue watching feature to your ```Audio/Video``` file or maybe you want to give the users the ability to set the volume once and even after reloading the page the volume should not change. </b>
 ## Hope it helps. Let me know if it really helped you😊💖
