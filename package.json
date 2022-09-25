@@ -1,7 +1,8 @@
 {
-    "name": "vite-vue-starter",
+    "name": "vue-custom-range-controler",
+    "description": "This is a re-usable default range slider alternative for volume/video/audio progress control created in Vue Js.",
     "private": true,
-    "version": "0.0.0",
+    "version": "1.0.0",
     "type": "module",
     "scripts": {
       "dev": "vite",
