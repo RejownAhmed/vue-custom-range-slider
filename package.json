@@ -1,6 +1,8 @@
 {
   "name": "custom-range-slider-controller",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "main": "./dist/custom-range-slider-controller.umd.js",
   "module": "./dist/custom-range-slider-controller.es.js",
   "exports": {
@@ -21,6 +23,7 @@
   "devDependencies": {
     "@vitejs/plugin-vue": "^3.1.0",
     "sass": "^1.55.0",
-    "vite": "^3.1.0"
+    "vite": "^3.1.0",
+    "vite-plugin-libcss": "^1.0.5"
   }
 }
