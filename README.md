@@ -26,9 +26,8 @@ to get the slider position value and use it to set the volume or video/audio pro
 ```rangeBgColor``` - Range Slider background color. ``default: `rgba(100, 100, 100, .5)` ``<br>
 ```thumbColor``` - Thumb Indicator color. ``default: `red` ``<br>
 ```previewColor``` - Preview Bar Color. ``default: rgb(150, 150, 150)``.<br>
-```progressColor``` - Progress Bar Color(Main Indicator). ``default: red``.<br>
-```expandOnHover``` - hover effect animation as like in youtube video player. ``default: false``.<br>
-
+```progressColor``` - Progress Bar Color(Main Indicator). ``default: red``.<br><br>
+```expandOnHover``` - hover effect animation as like in youtube video player. ``default: false``.<br><br>
 ```AlwaysShowThumb``` - show the thumb indicator always. ``default: false``.<br>
 ```noPreviewBar``` - hide the preview indicator. ``default: false``.<br>
 ```noProgressBar``` - hide the Progress/Main Indicator bar. ``default: false``.<br>
