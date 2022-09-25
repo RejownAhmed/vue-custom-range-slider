@@ -33,4 +33,4 @@ to get the slider position value and use it to set the volume or video/audio pro
 ```noProgressBar``` - hide the Progress/Main Indicator bar. ``default: false``.<br>
 ```noThumb``` - hide the thumb indicator always. ``default: false``.<br><br>
 
-## Thank you for using this. Hope it helps. Let me know if it helped you😊💖
+## Hope it helps. Let me know if it really helped you😊💖
