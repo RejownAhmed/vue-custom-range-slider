@@ -31,5 +31,6 @@ to get the slider position value and use it to set the volume or video/audio pro
 ```AlwaysShowThumb``` - show the thumb indicator always. ``default: false``.<br>
 ```noPreviewBar``` - hide the preview indicator. ``default: false``.<br>
 ```noProgressBar``` - hide the Progress/Main Indicator bar. ``default: false``.<br>
-```noThumb``` - hide the thumb indicator always. ``default: false``.<br>
-Thank you for using this. Hope it helps. Let me know if it helped you😊💖
+```noThumb``` - hide the thumb indicator always. ``default: false``.<br><br>
+
+## Thank you for using this. Hope it helps. Let me know if it helped you😊💖
