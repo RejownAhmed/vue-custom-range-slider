@@ -1,10 +1,9 @@
 <template>
     <div 
-        :id="props.id"
         class="range-container"
         :class="props.expandOnHover ? 'expandOnHover' : ''"
         :style="{   
-            '--progress-position': position, 
+            '--progress-position': progressPosition, 
             '--range-container-height': props.rangeContainerHeight, 
             '--range-height': props.rangeHeight, 
             '--thumb-height': props.thumbHeight, 
@@ -12,7 +11,12 @@
             '--thumb-color': props.thumbColor, 
             '--preview-color': props.previewColor, 
             '--progress-color': props.progressColor, 
-        }">
+        }"
+        @mousemove="handlerangeUpdate"
+        @mousedown="toggleScrubbing"
+        @mouseup="isScrubbing = false"
+        @mouseleave="isScrubbing = false">
+
         <div class="range">
             <span v-if="!props.noPreviewBar" class="preview"></span>
             <span v-if="!props.noProgressBar" class="progress"></span>
@@ -22,19 +26,11 @@
     </div>
   </template>
   <script setup>
-    import { onMounted, ref } from 'vue'
+    import { ref } from 'vue'
     
     const props = defineProps(
         {
             modelValue: {
-                type: String,
-                default: '0'
-            },
-            id: {
-                type: String,
-                required: true,
-            },
-            defaultPosition: {
                 type: Number,
                 default: 0
             },
@@ -88,47 +84,28 @@
             },
         }
     )
-    const emit  = defineEmits([
-        'update:modelValue'
-    ])
-    const position = ref(props.defaultPosition)
-    const isScrubbing = ref(false)
-    const rangeContainer = ref()
-  
-    onMounted(()=>{
-        rangeContainer.value = document.getElementById(props.id)
-        customRange()
-    })
-  
-    const customRange = ()=>{
-        rangeContainer.value.addEventListener("mousemove", handlerangeUpdate)
-        rangeContainer.value.addEventListener("mousedown", toggleScrubbing)
-        document.addEventListener("mouseup", e => {
-            if (isScrubbing.value) toggleScrubbing(e)
-        })
-        document.addEventListener("mousemove", e => {
-            if (isScrubbing.value) handlerangeUpdate(e)
-        })
-  
-    }
+    const emit  = defineEmits(['update:modelValue'])//emit data to v-model
+    const isScrubbing = ref(false)//Not clicked/dragged
+    const progressPosition = ref(props.modelValue)//setting it to modelValue gives us more flexibility over default positioning
+
     const toggleScrubbing = (e)=> {
+        if( props.modelValue == null ) alert(msg.value)
         isScrubbing.value = (e.buttons & 1) === 1
         handlerangeUpdate(e)
     }
     const handlerangeUpdate = (e)=>{
-        const rect = rangeContainer.value.getBoundingClientRect()
+        const target = e.currentTarget
+        const rect = target.getBoundingClientRect()
         const percent = Math.min(Math.max(0, e.x - rect.x), rect.width) / rect.width
-        rangeContainer.value.style.setProperty("--preview-position", percent)
+        target.style.setProperty("--preview-position", percent)//Set the preview position onMouseMove
         if (isScrubbing.value) {
-            rangeContainer.value.style.setProperty("--progress-position", percent)
-            position.value = percent;
-            emit('update:modelValue', percent.toString())
+            progressPosition.value = percent //set progress bar position
+            emit('update:modelValue', percent)//Emit the current position to v-model directive
         }
     }
   
   </script>
   <style lang="scss" scoped> 
-    //Don't get demotivated seeing SCSS styling here. Check out the style.css file for the compiled normal css
     .range-container {
         --range-container-height: 7px;
         --range-height: 3px;
