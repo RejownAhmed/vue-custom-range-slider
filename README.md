@@ -10,7 +10,7 @@ without even editing the component itself.
 
 It's so easy😁 Just download or copy the component from the ***src*** folder and put it in your project. Then simply import the component and use it as like any other vue js components. 
 
-## Getting the progress value and setting it as needed
+## Getting value and setting it
 
 You can use **v-model** directive on the component
 to get the slider position value and use it to set the volume or video/audio progress as per your need. You'll get more clear idea if you visit the example above.
