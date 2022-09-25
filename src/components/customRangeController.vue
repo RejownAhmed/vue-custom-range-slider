@@ -20,7 +20,6 @@
         <div class="range">
             <span v-if="!props.noPreviewBar" class="preview"></span>
             <span v-if="!props.noProgressBar" class="progress"></span>
-            <slot></slot>
             <span v-if="!props.noThumb" class="thumb-indicator" :style="props.alwaysShowThumb ? {display: 'block'} : ''"></span>
         </div>
     </div>
