@@ -102,7 +102,15 @@
             emit('update:modelValue', percent)//Emit the current position to v-model directive
         }
     }
-  
+    
+    defineExpose({ progressPosition }) //Expose the porgressPosition Ref
+    /*
+    * This is a must needed since sometimes we'll need to update 
+    * the position from it's parent
+    * without exposing it we cannot update the porgressPosition when
+    * the audio/video plays
+    * See the video player example created with it for more details
+    */
   </script>
   <style lang="scss" scoped> 
     .range-container {
