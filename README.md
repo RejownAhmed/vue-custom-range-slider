@@ -27,6 +27,7 @@ to get the slider position value and use it to set the volume or video/audio pro
 ```progressColor``` - Progress Bar Color(Main Indicator). ``default: red``.<br><br>
 ```expandOnHover``` - hover effect animation as like in youtube video player. ``default: false``.<br><br>
 ```AlwaysShowThumb``` - show the thumb indicator always. ``default: false``.<br>
+```showCustomText``` - show Custom text inside progress bar. ``default: "0%"``.<br>
 ```noPreviewBar``` - hide the preview indicator. ``default: false``.<br>
 ```noProgressBar``` - hide the Progress/Main Indicator bar. ``default: false``.<br>
 ```noThumb``` - hide the thumb indicator always. ``default: false``.<br><br>
