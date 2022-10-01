@@ -95,7 +95,6 @@
 
         const percent = Math.min(Math.max(0, e.x - rect.x), rect.width) / rect.width
         target.style.setProperty("--preview-position", percent)//Set the preview position onMouseMove
-        console.log(e.changedTouches[0].clientX)
         if (isScrubbing.value) {
             progressPosition.value = percent //set progress bar position
             emit('update:modelValue', percent)//Emit the current position to v-model directive
@@ -252,4 +251,3 @@
         } 
     }
   </style>
-  
