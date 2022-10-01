@@ -92,14 +92,27 @@
     const handlerangeUpdate = (e)=>{
         const target = e.currentTarget
         const rect = target.getBoundingClientRect()
+
         const percent = Math.min(Math.max(0, e.x - rect.x), rect.width) / rect.width
+        target.style.setProperty("--preview-position", percent)//Set the preview position onMouseMove
+        console.log(e.changedTouches[0].clientX)
+        if (isScrubbing.value) {
+            progressPosition.value = percent //set progress bar position
+            emit('update:modelValue', percent)//Emit the current position to v-model directive
+        }
+    }
+    //For TouchScreens
+    const touchHandlerangeUpdate = (e)=>{
+        isScrubbing.value = true
+        const target = e.currentTarget
+        const rect = target.getBoundingClientRect()
+        const percent = Math.min(Math.max(0, e.changedTouches[0].clientX - rect.x), rect.width) / rect.width
         target.style.setProperty("--preview-position", percent)//Set the preview position onMouseMove
         if (isScrubbing.value) {
             progressPosition.value = percent //set progress bar position
             emit('update:modelValue', percent)//Emit the current position to v-model directive
         }
     }
-
     defineExpose({ progressPosition, bufferPosition, customTextValue }) //Expose the porgressPosition Ref
     /*
     * This is a must needed since sometimes we'll need to update 
@@ -130,7 +143,11 @@
         @mousemove="handlerangeUpdate"
         @mousedown="toggleScrubbing"
         @mouseup="isScrubbing = false"
-        @mouseleave="isScrubbing = false">
+        @mouseleave="isScrubbing = false"
+        :ontouchstart="touchHandlerangeUpdate"
+        :ontouchend="isScrubbing = false"
+        :ontouchmove="touchHandlerangeUpdate"
+    >
 
         <div class="range">
             <span v-if="!props.noPreviewBar" class="preview"></span>
@@ -159,7 +176,6 @@
             --hover-range-height: 100%;
         }
         height: var(--range-container-height);
-        margin-inline: .5rem;
         cursor: pointer;
         display: flex;
         align-items: center;
@@ -236,3 +252,4 @@
         } 
     }
   </style>
+  
